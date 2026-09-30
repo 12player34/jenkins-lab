@@ -2,12 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Info') {
+
+        stage('Check Workspace') {
             steps {
-                sh 'hostname'
-                sh 'whoami'
-                sh 'pwd'
+                sh 'ls -la'
             }
         }
+
+        stage('Check Docker Socket') {
+            steps {
+                sh 'ls -l /var/run/docker.sock'
+            }
+        }
+
     }
 }
