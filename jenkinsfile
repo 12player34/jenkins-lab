@@ -2,9 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Info') {
             steps {
-                sh 'echo Hello Jenkins'
                 sh 'hostname'
                 sh 'whoami'
                 sh 'pwd'
